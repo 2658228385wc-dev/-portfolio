@@ -1,0 +1,68 @@
+.scroll-stack {
+  position: relative;
+  width: 100%;
+}
+
+.scroll-stack--contained {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.scroll-stack__inner {
+  position: relative;
+  padding-inline: clamp(1rem, 6%, 5rem);
+}
+
+.scroll-stack__slot {
+  position: sticky;
+}
+
+.scroll-stack-card {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 20rem;
+  padding: 2.5rem;
+  border-radius: 28px;
+  background: light-dark(#ffffff, #18181b);
+  color: light-dark(#18181b, #fafafa);
+  box-shadow:
+    0 0 0 1px light-dark(rgb(0 0 0 / 0.06), rgb(255 255 255 / 0.08)),
+    0 -12px 40px -16px rgb(0 0 0 / 0.35),
+    0 24px 48px -24px rgb(0 0 0 / 0.4);
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+
+.scroll-stack-card__shade {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #000;
+  opacity: var(--scroll-stack-dim, 0);
+  pointer-events: none;
+}
+
+/* ── 作品集项目卡适配 ──────────────────────────────────────────
+   高度随内容、外观由内部 .project-card 接管；
+   组件自带的背景/阴影/内边距全部去掉，只保留堆叠变换与暗化层 */
+.project-stack-card {
+  height: auto;
+  padding: 0;
+  border-radius: 40px;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (min-width: 640px) {
+  .project-stack-card {
+    border-radius: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-stack-card {
+    border-radius: 60px;
+  }
+}
