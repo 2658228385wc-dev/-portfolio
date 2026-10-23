@@ -9,21 +9,18 @@ const ROWS = [
     label: "Phone / 手机",
     value: contact.phoneDisplay,
     href: `tel:${contact.phone}`,
-    hint: "点击拨号",
   },
   {
     icon: Mail,
     label: "Email / 邮箱",
     value: contact.email,
     href: `mailto:${contact.email}`,
-    hint: "点击发邮件",
   },
   {
     icon: QrCode,
     label: "WeChat / 微信",
     value: contact.wechatNote,
     href: null,
-    hint: "见右侧二维码",
   },
 ];
 
@@ -31,18 +28,18 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative z-10 bg-[#0C0C0C] px-5 pb-10 pt-24 sm:px-8 sm:pt-28 md:px-10 md:pt-32"
+      className="rounded-t-[40px] bg-white px-5 pb-10 pt-20 sm:rounded-t-[50px] sm:px-8 sm:pt-24 md:rounded-t-[60px] md:px-10 md:pt-28"
     >
       <div className="mx-auto max-w-6xl">
         <FadeIn delay={0} y={30}>
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#D7E2EA] opacity-50">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#0C0C0C] opacity-50">
             Contact / 联系方式
           </p>
         </FadeIn>
 
         <FadeIn delay={0.08} y={40}>
           <h2
-            className="hero-heading mt-4 font-black uppercase leading-none tracking-tight"
+            className="mt-4 font-black uppercase leading-none tracking-tight text-[#0C0C0C]"
             style={{ fontSize: "clamp(2.75rem, 11vw, 150px)" }}
           >
             {contact.heading}
@@ -51,7 +48,7 @@ export default function ContactSection() {
 
         <FadeIn delay={0.16} y={30}>
           <p
-            className="mt-6 max-w-[560px] font-light leading-relaxed text-[#858585]"
+            className="mt-6 max-w-[560px] font-light leading-relaxed text-[#0C0C0C] opacity-60"
             style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.25rem)" }}
           >
             {contact.intro}
@@ -61,12 +58,12 @@ export default function ContactSection() {
         <div className="mt-14 grid gap-12 md:grid-cols-[1fr_auto] md:gap-16">
           {/* 左：联系方式列表 */}
           <FadeIn delay={0.22} y={30}>
-            <div className="border-t border-white/10">
+            <div className="border-t" style={{ borderColor: "rgba(12,12,12,0.15)" }}>
               {ROWS.map((row) => {
                 const Icon = row.icon;
                 const inner = (
                   <>
-                    <span className="flex items-center gap-3 text-[#D7E2EA] opacity-45">
+                    <span className="flex items-center gap-3 text-[#0C0C0C] opacity-45">
                       <Icon className="h-4 w-4 md:h-5 md:w-5" strokeWidth={1.5} />
                       <span className="text-[0.65rem] font-medium uppercase tracking-[0.2em] sm:text-xs">
                         {row.label}
@@ -74,13 +71,13 @@ export default function ContactSection() {
                     </span>
                     <span className="flex items-center gap-3">
                       <span
-                        className="font-medium tracking-tight text-[#D7E2EA] transition-opacity duration-200"
+                        className="font-medium tracking-tight text-[#0C0C0C] transition-opacity duration-200"
                         style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.75rem)" }}
                       >
                         {row.value}
                       </span>
                       {row.href && (
-                        <ArrowUpRight className="h-4 w-4 text-[#D7E2EA] opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-60 md:h-5 md:w-5" />
+                        <ArrowUpRight className="h-4 w-4 text-[#0C0C0C] opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-50 md:h-5 md:w-5" />
                       )}
                     </span>
                   </>
@@ -90,14 +87,16 @@ export default function ContactSection() {
                   <a
                     key={row.label}
                     href={row.href}
-                    className="group flex flex-wrap items-center justify-between gap-3 border-b border-white/10 py-6 transition-colors duration-200 hover:border-white/25 md:py-8"
+                    className="group flex flex-wrap items-center justify-between gap-3 border-b py-6 transition-colors duration-200 hover:border-black/40 md:py-8"
+                    style={{ borderColor: "rgba(12,12,12,0.15)" }}
                   >
                     {inner}
                   </a>
                 ) : (
                   <div
                     key={row.label}
-                    className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 py-6 md:py-8"
+                    className="flex flex-wrap items-center justify-between gap-3 border-b py-6 md:py-8"
+                    style={{ borderColor: "rgba(12,12,12,0.15)" }}
                   >
                     {inner}
                   </div>
@@ -108,7 +107,7 @@ export default function ContactSection() {
 
           {/* 右：微信二维码 */}
           <FadeIn delay={0.3} y={30}>
-            <div className="rounded-[36px] border-2 border-[#D7E2EA]/25 p-3 sm:rounded-[44px] sm:p-4">
+            <div className="rounded-[36px] border-2 p-3 sm:rounded-[44px] sm:p-4" style={{ borderColor: "rgba(12,12,12,0.2)" }}>
               <div className="overflow-hidden rounded-[26px] bg-white p-3 sm:rounded-[34px] sm:p-4">
                 {CONTACT_QR ? (
                   <img
@@ -126,7 +125,7 @@ export default function ContactSection() {
                   </div>
                 )}
               </div>
-              <p className="mt-3 text-center text-[0.65rem] font-medium uppercase tracking-[0.25em] text-[#D7E2EA] opacity-55">
+              <p className="mt-3 text-center text-[0.65rem] font-medium uppercase tracking-[0.25em] text-[#0C0C0C] opacity-55">
                 {contact.qrHint}
               </p>
             </div>
@@ -134,7 +133,7 @@ export default function ContactSection() {
         </div>
 
         {/* 页脚 */}
-        <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-[0.7rem] uppercase tracking-[0.2em] text-[#D7E2EA] opacity-40 sm:mt-24">
+        <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t pt-6 text-[0.7rem] uppercase tracking-[0.2em] text-[#0C0C0C] opacity-50 sm:mt-24" style={{ borderColor: "rgba(12,12,12,0.15)" }}>
           <span>{contact.footer}</span>
           <a
             href="#top"
