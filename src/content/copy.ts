@@ -389,7 +389,7 @@ export const projectDetails: ProjectDetail[] = [
   {
     number: "04",
     tagline:
-      "多个小项目的合集：百度网盘SVIP tab首屏焕新与MBTI营销活动，实习工作复盘——NA 12.0版本迭代升级、Teracleaner、Teratransfer动效，以及Blender三维建模练习。",
+      "多个小项目的合集：百度网盘SVIPtab首屏焕新与MBTI营销活动，实习工作复盘，以及Blender三维建模练习。",
     meta: [
       { label: "客户 / Client", value: "百度网盘" },
       { label: "时间 / Year", value: "2021 – 2026" },
