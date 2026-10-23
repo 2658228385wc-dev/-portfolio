@@ -134,7 +134,7 @@ export const projectDetails: ProjectDetail[] = [
       "540+ 天持续迭代，以体验设计主导的农场经营玩法。从概念定义、2.5D 视觉体系、组件规范，到上线反馈与自研新玩法，构建「种植—收获—兑换」的长期留存闭环。",
     meta: [
       { label: "客户 / Client", value: "拼多多 · TEMU" },
-      { label: "时间 / Year", value: "2023.10 – 2025" },
+      { label: "时间 / Year", value: "2024.07 – 2025.09" },
       { label: "角色 / Role", value: "体验设计师（主设计）" },
       { label: "平台 / Platform", value: "TEMU · 移动端" },
     ],
@@ -254,7 +254,7 @@ export const projectDetails: ProjectDetail[] = [
       "二期优化迭代期间，负责月卡参与模块的全链路体验设计。从前期洞察、业务支持到自驱设计与组件沉淀，验证多条增长路径。",
     meta: [
       { label: "客户 / Client", value: "拼多多 · TEMU" },
-      { label: "时间 / Year", value: "2022.09 – 2023.06" },
+      { label: "时间 / Year", value: "2022.09 – 2023.04" },
       { label: "角色 / Role", value: "体验设计师（主设计）" },
       { label: "协作 / Team", value: "3 产品 + 3 开发" },
     ],
@@ -314,7 +314,7 @@ export const projectDetails: ProjectDetail[] = [
       "从免费权益运营转向付费会员经营，以TEMU Circle承接更广泛的高价值用户，提升用户复购与长期商业价值。",
     meta: [
       { label: "客户 / Client", value: "TEMU" },
-      { label: "时间 / Year", value: "——" },
+      { label: "时间 / Year", value: "2023.04 – 2024.07" },
       { label: "角色 / Role", value: "体验设计师" },
       { label: "平台 / Platform", value: "TEMU · 移动端" },
     ],
