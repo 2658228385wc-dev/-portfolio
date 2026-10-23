@@ -27,3 +27,8 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* 固定导航的锚点偏移：跳转后标题不被导航遮住 */
+[id] {
+  scroll-margin-top: 6rem;
+}
