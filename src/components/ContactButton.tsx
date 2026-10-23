@@ -9,6 +9,12 @@ export default function ContactButton({ label = common.cta }: ContactButtonProps
   return (
     <a
       href="#contact"
+      onClick={(event) => {
+        const target = document.querySelector("#contact");
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }}
       className="inline-flex items-center gap-2 rounded-full px-8 py-3 text-xs font-medium uppercase tracking-widest text-white transition-opacity duration-200 hover:opacity-90 sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base"
       style={{
         background:

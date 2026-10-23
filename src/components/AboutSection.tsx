@@ -75,10 +75,7 @@ export default function AboutSection() {
           </h2>
         </FadeIn>
 
-        <div
-          id="contact"
-          className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24"
-        >
+        <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
           <AnimatedText
             lines={about.lines}
             className="max-w-[560px] text-center font-medium leading-relaxed text-[#858585]"

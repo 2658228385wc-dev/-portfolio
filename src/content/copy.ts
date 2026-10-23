@@ -22,6 +22,18 @@ export const common = {
   cta: "联系我",
 };
 
+export const contact = {
+  heading: "Let's talk",
+  intro: "有合适的机会、合作意向，或只是想聊聊设计与 AI，欢迎随时找我。",
+  phone: "15928188814",
+  phoneDisplay: "159 2818 8814",
+  email: "2658228385@qq.com",
+  wechatNote: "扫码添加微信",
+  qrAlt: "王诚的微信好友二维码",
+  qrHint: "微信扫码",
+  footer: "© 2026 王诚 · 体验设计师",
+};
+
 export const hero = {
   nav: [
     { label: "About", href: "#about" },

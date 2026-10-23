@@ -4,6 +4,7 @@ import MarqueeSection from "./components/MarqueeSection";
 import AboutSection from "./components/AboutSection";
 import ServicesSection from "./components/ServicesSection";
 import ProjectsSection from "./components/ProjectsSection";
+import ContactSection from "./components/ContactSection";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import { ROUTE_EVENT, navigate } from "./router";
 
@@ -48,6 +49,7 @@ export default function App() {
       <AboutSection />
       <ServicesSection />
       <ProjectsSection />
+      <ContactSection />
     </div>
   );
 }

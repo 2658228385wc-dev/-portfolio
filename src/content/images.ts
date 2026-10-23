@@ -43,7 +43,7 @@ function pick(name: string): string {
 /* ─────────────────────────── Hero ─────────────────────────── */
 export const HERO_PORTRAIT = pick("hero-portrait");
 
-/* ─────────────────────────── About ────────────────────────── */
+/* ────────────────────────── About ────────────────────────── */
 export const ABOUT_DECOR = {
   moon: pick("about-moon"),
   object: pick("about-object"),
@@ -51,8 +51,11 @@ export const ABOUT_DECOR = {
   group: pick("about-group"),
 };
 
-/* ────────────────────────── Marquee ───────────────────────── */
-/** 8 张，顺序即展示顺序：前 4 张走第一行，后 4 张走第二行 */
+/* ───────────────────────── Contact ────────────────────────── */
+/** 微信好友二维码：放 src/assets/local/contact-wechat-qr.webp 即生效 */
+export const CONTACT_QR = pick("contact-wechat-qr");
+
+/* ────────────────────────── Marquee ───────────────────────── *//** 8 张，顺序即展示顺序：前 4 张走第一行，后 4 张走第二行 */
 const MARQUEE_COUNT = 8;
 export const MARQUEE_IMAGES = Array.from({ length: MARQUEE_COUNT }, (_, i) =>
   pick(`marquee-${String(i + 1).padStart(2, "0")}`)
