@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { common } from "../content/copy";
 
 type ContactButtonProps = {
@@ -15,7 +14,7 @@ export default function ContactButton({ label = common.cta }: ContactButtonProps
         event.preventDefault();
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       }}
-      className="inline-flex items-center gap-2 rounded-full px-8 py-3 text-xs font-medium uppercase tracking-widest text-white transition-opacity duration-200 hover:opacity-90 sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base"
+      className="inline-flex items-center justify-center rounded-full px-8 py-3 text-center text-xs font-medium uppercase tracking-widest text-white transition-opacity duration-200 hover:opacity-90 sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base"
       style={{
         background:
           "linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)",
@@ -26,7 +25,6 @@ export default function ContactButton({ label = common.cta }: ContactButtonProps
       }}
     >
       {label}
-      <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5" />
     </a>
   );
 }
