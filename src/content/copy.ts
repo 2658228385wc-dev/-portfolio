@@ -274,6 +274,7 @@ export const projectDetails: ProjectDetail[] = [
       { label: "协作 / Team", value: "3 产品 + 3 开发" },
     ],
     results: ["会员体量 +200%", "2 亿+ 增量 GMV", "5000 万+ 会员体量", "ROI 1 : 18"],
+    showGallery: false,
     parts: [
       {
         title: "前期工作",
@@ -312,7 +313,6 @@ export const projectDetails: ProjectDetail[] = [
           "项目后期把高频复用的视觉样式、动效、素材沉淀为可复用资产，让后续活动与版本迭代可以快速搭建，并保持一致的品牌感。",
         sections: [
           { title: "基础组件整理", images: [21] },
-          { title: "动效组件库搭建", images: [22] },
           { title: "可复用素材库整理", images: [23] },
         ],
       },
