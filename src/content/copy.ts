@@ -400,92 +400,71 @@ export const projectDetails: ProjectDetail[] = [
   {
     number: "04",
     tagline:
-      "多个小项目的合集：百度网盘SVIPtab首屏焕新与MBTI营销活动，实习工作复盘，以及Blender三维建模练习。",
+      "百度网盘的视觉探索合集：SVIP 体验焕新、IP 运营活动与 3D 表达练习。",
     meta: [
       { label: "客户 / Client", value: "百度网盘" },
       { label: "时间 / Year", value: "2021 – 2026" },
       { label: "角色 / Role", value: "体验设计师" },
       { label: "平台 / Platform", value: "移动端 · 3D" },
     ],
-    results: ["NA 12.0 全量上线 · 点击率+4.18PP", "40+ 工具图标 / 50+ 文件图标", "Teracleaner 0→1 设计", "Teratransfer 交互动效demo"],
+    results: ["SVIP tab 首页焕新", "MBTI 营销活动落地", "1 套可复用 3D 角色资产"],
     showGallery: false,
     parts: [
       {
         title: "项目概览",
         intro:
-          "这一项目收录百度网盘相关的多个小项目：收银台SVIP tab首屏焕新、网盘文库MBTI营销活动，以及实习工作复盘——NA端12.0版本迭代升级、Teracleaner清理工具、Teratransfer动效等。它们覆盖体验升级、0→1产品设计与动效表达三条线，另附Blender三维建模练习。",
+          "这一组作品来自百度网盘与个人视觉实践：包括收银台 SVIP tab 的首页焕新设计、网盘文库 MBTI 营销活动，以及 Blender 角色建模练习。它们更偏视觉语言与表现力的探索——如何在商业约束内做出辨识度。",
         sections: [{ title: "百度网盘 · 项目封面", images: [1] }],
       },
       {
-        title: "SVIP tab 首屏焕新",
+        title: "SVIP 体验焕新",
         intro:
-          "百度网盘汇聚海量资源，会员商品涉及场景多、逻辑复杂。痛点集中在三处——信息层级：页面信息多、关键信息不突出，决策引导不足；视觉：SVIP会员沉浸感不足；体验：市面上会员收银台页面千篇一律。设计策略对应三点：关键信息突出与相似信息整合、放大决策按钮，头部氛围营造沉浸感，打破原有框架、创新UI动势提升转化氛围。",
+          "在既有框架内重排视觉层级，强化会员尊贵感与续费引导；MBTI 营销活动则用人格化话题包装功能点，让功能介绍变成一次可分享的自我表达。",
         sections: [
-          { title: "背景 · 痛点 · 设计策略", images: [2] },
-          { title: "方案一 / 方案二", images: [3] },
+          { title: "SVIP tab 焕新 · 背景与设计策略", images: [2] },
+          { title: "SVIP tab 焕新 · 两版方案", images: [3] },
+          { title: "MBTI 营销活动 · 背景与用户洞察", images: [4] },
+          { title: "MBTI 营销活动 · 设计目标与关键词", images: [5] },
+          { title: "MBTI 营销活动 · 设计思路 · 形色质构", images: [6] },
+          { title: "MBTI 营销活动 · AI 辅助生成素材", images: [7] },
+          { title: "页面展示 · Before / After", images: [8] },
         ],
       },
       {
-        title: "MBTI 营销活动",
+        title: "IP 与 3D 延展",
         intro:
-          "网盘文库结合自身AI能力为用户提供垂直玩法，带动DAU和付费提升。本次基于MBTI人格测试产品demo设计营销视觉页：核心用户为年轻化、情绪驱动型人群，使用动机来自自我探索、社交表达与内容消费。关键词提炼为AI、年轻化、情绪驱动、视觉冲击力、低决策成本。",
-        sections: [
-          { title: "背景与用户分析", images: [4] },
-          { title: "设计目标与策略", images: [5] },
-          { title: "设计思路 · 形色质构", images: [6] },
-          { title: "AI辅助", images: [7] },
-        ],
+          "以云一朵 IP 为核心的数字盲盒玩法强化用户特权差异感知；Blender 角色建模与场景渲染练习，则持续反哺产品视觉的三维表达能力。",
+        sections: [{ title: "Blender 角色建模与渲染练习", images: [39] }],
       },
       {
-        title: "页面展示",
+        title: "实习复盘 · NA12.0 与产品矩阵",
         intro:
-          "两组Before/After对照：网盘收银台SVIP tab从平铺信息到沉浸式会员氛围；MBTI人格测试demo从灰度原型到3D粘土风格的完整营销页——已通过测试验证。",
-        sections: [{ title: "Before / After", images: [8] }],
-      },
-      {
-        title: "实习复盘 · NA 12.0 版本迭代升级",
-        intro:
-          "网盘用户的需求逐步呈现多样性和差异性。本次迭代从「多元化服务、专属个性化定制、全新视觉设计语言」三方面展开体验升级：基于数据洞察、业务诉求与产品问题拆解出增存优化、商业增益、体验进阶三个优化方向，并沉淀了以网盘主色#06A7FF与辅助色、F1-F9字阶为核心的设计规范。",
+          "实习期间参与的百度网盘 NA12.0 版本迭代，以及同期负责的 Teracleaner 清理工具与 Teratransfer 交互动效 demo。这段经历让我完整走了一遍大版本迭代的链路：从数据与业务目标拆解设计方向，到视觉语言、图标体系与组件规范的系统落地。",
         sections: [
           { title: "实习复盘 · 封面与目录", images: [9, 11] },
-          { title: "项目背景与设计方向", images: [12, 13] },
-          { title: "设计规范", images: [14] },
+          { title: "NA12.0 · 版本迭代与设计方向", images: [12, 13] },
+          { title: "设计规范 · 色彩与字阶", images: [14] },
           { title: "多元 · 更丰富的服务体验", images: [15] },
-          { title: "专属 · 更智能、尊享的体验", images: [16, 17] },
+          { title: "专属 · 更智能、尊享的体验", images: [16] },
           { title: "全新视觉设计语言", images: [18] },
-          { title: "卡片容器与信息分层", images: [19, 20, 21, 22] },
-          { title: "图标焕新", images: [23, 24, 25, 26, 27] },
-          { title: "自动备份与登录页", images: [28, 29] },
+          { title: "卡片容器与信息分层", images: [17, 19, 21] },
+          { title: "列表视图与传输流程", images: [22] },
+          { title: "图标焕新 · 图标体系总览", images: [20] },
+          { title: "图标焕新 · 工具图标设计 40+", images: [26] },
+          { title: "图标焕新 · 五类工具图标", images: [23] },
+          { title: "图标焕新 · 文件图标设计 50+", images: [27] },
+          { title: "图标焕新 · 文件夹新样式", images: [25] },
+          { title: "图标焕新 · 深浅色模式适配", images: [24] },
+          { title: "自动备份", images: [28] },
+          { title: "抽象化场景处理", images: [29] },
           { title: "界面展示", images: [30] },
           { title: "全量上线数据反馈", images: [40] },
+          { title: "Teracleaner · 项目背景与设计策略", images: [32, 33] },
+          { title: "Teracleaner · 设计规范与 LOGO", images: [34, 35] },
+          { title: "Teracleaner · 主要页面", images: [36] },
+          { title: "Teratransfer · 需求与挑战", images: [37] },
+          { title: "Teratransfer · 交互动效策略", images: [38] },
         ],
-      },
-      {
-        title: "实习复盘 · Teracleaner",
-        intro:
-          "Teracleaner为安卓清理工具，作为Terabox产品矩阵计划的一部分，目标是为Terabox导流、增加产品曝光度。设计策略三方面：组件与规范——与Terabox使用同一组件库保证视觉统一；用户体验——以同理心预判用户下一步操作、及时反馈；动画效果——清理过程本就枯燥，用「清晰、简洁、聚焦」的动效吸引用户驻足。LOGO经A/B两版对比，最终采用扫帚主体结合品牌蓝的方案B。",
-        sections: [
-          { title: "项目背景", images: [31] },
-          { title: "设计策略", images: [32] },
-          { title: "设计规范", images: [33] },
-          { title: "LOGO 设计", images: [34] },
-          { title: "主要页面", images: [35] },
-        ],
-      },
-      {
-        title: "实习复盘 · Teratransfer 动效",
-        intro:
-          "为新增的Teratransfer网页提供完整操作流程的交互动效demo。交互动效的核心是告诉用户操作从哪里来、往哪里去，同时淡化等待时间、提升趣味性与满意度——好的动效应兼顾节奏、动静平衡与流畅。策略上运用较多缓动与延迟效果，让动画脱离尖锐和生硬，形成更强的对比。",
-        sections: [
-          { title: "需求与挑战", images: [36] },
-          { title: "设计策略", images: [37, 38] },
-        ],
-      },
-      {
-        title: "Blender 建模练习",
-        intro:
-          "工作之余持续用Blender做三维建模与渲染练习：从潮玩IP场景到角色小品，覆盖建模、材质、灯光与渲染的完整流程，探索三维视觉在运营活动与品牌表达中的更多可能。",
-        sections: [{ title: "建模练习合辑", images: [39] }],
       },
     ],
   },
