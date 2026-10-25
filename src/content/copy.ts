@@ -408,6 +408,7 @@ export const projectDetails: ProjectDetail[] = [
       { label: "平台 / Platform", value: "移动端 · 3D" },
     ],
     results: ["NA 12.0 全量上线 · 点击率+4.18PP", "40+ 工具图标 / 50+ 文件图标", "Teracleaner 0→1 设计", "Teratransfer 交互动效demo"],
+    showGallery: false,
     parts: [
       {
         title: "项目概览",
