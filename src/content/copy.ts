@@ -316,11 +316,6 @@ export const projectDetails: ProjectDetail[] = [
           { title: "可复用素材库整理", images: [23] },
         ],
       },
-      {
-        title: "项目总结",
-        intro:
-          "3 个产品 + 3 个开发的高协作密度、专注高效的工作状态，让我对 C 端增长链路、视觉/动效/交互落地都形成了系统认知，也补齐了 AE、Blender 等关键工具。",
-      },
     ],
   },
   {
