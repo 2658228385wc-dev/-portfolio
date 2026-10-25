@@ -329,6 +329,7 @@ export const projectDetails: ProjectDetail[] = [
       { label: "平台 / Platform", value: "TEMU · 移动端" },
     ],
     results: ["上线4周核心数据持续增长", "覆盖开通前-开通后全旅程", "7大权益矩阵完整落地"],
+    showGallery: false,
     parts: [
       {
         title: "项目概览",
