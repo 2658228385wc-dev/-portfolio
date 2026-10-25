@@ -137,6 +137,8 @@ export type ProjectDetail = {
   meta: { label: string; value: string }[];
   results: string[];
   parts: ProjectPart[];
+  /** 详情页末尾是否展示过程图库（project-0N-b/c/d…），默认 true */
+  showGallery?: boolean;
 };
 
 export const projectDetails: ProjectDetail[] = [
@@ -151,6 +153,7 @@ export const projectDetails: ProjectDetail[] = [
       { label: "平台 / Platform", value: "TEMU · 移动端" },
     ],
     results: ["下单用户占比 +18.6%", "场景 GMV +16.7%", "留存率 +8.1%", "540+ 天持续迭代"],
+    showGallery: false,
     parts: [
       {
         title: "项目概览",

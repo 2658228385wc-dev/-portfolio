@@ -251,8 +251,8 @@ export default function ProjectDetailPage({ projectId, onBack }: Props) {
         </div>
       </main>
 
-      {/* 过程图库（project-0N-b/c 及后续 d…） */}
-      {rest.length > 0 && (
+      {/* 过程图库（project-0N-b/c 及后续 d…）；showGallery: false 可关闭 */}
+      {detail.showGallery !== false && rest.length > 0 && (
         <section className="mx-auto mt-16 max-w-6xl space-y-4 px-5 sm:mt-20 sm:space-y-6 sm:px-8 md:px-12">
           {rest.map((src, i) => (
             <FadeIn key={i} y={40}>
