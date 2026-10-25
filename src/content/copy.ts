@@ -455,7 +455,7 @@ export const projectDetails: ProjectDetail[] = [
           { title: "卡片容器与信息分层", images: [19, 20, 21, 22] },
           { title: "图标焕新", images: [23, 24, 25, 26, 27] },
           { title: "自动备份与登录页", images: [28, 29] },
-          { title: "全量上线数据反馈", images: [30] },
+          { title: "界面展示", images: [30] },
         ],
       },
       {
