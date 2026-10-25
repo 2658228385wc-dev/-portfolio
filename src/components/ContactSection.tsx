@@ -31,15 +31,9 @@ export default function ContactSection() {
       className="rounded-t-[40px] bg-white px-5 pb-10 pt-20 sm:rounded-t-[50px] sm:px-8 sm:pt-24 md:rounded-t-[60px] md:px-10 md:pt-28"
     >
       <div className="mx-auto max-w-6xl">
-        <FadeIn delay={0} y={30}>
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#0C0C0C] opacity-50">
-            Contact / 联系方式
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.08} y={40}>
+        <FadeIn delay={0} y={40}>
           <h2
-            className="mt-4 font-black uppercase leading-none tracking-tight text-[#0C0C0C]"
+            className="text-center font-black uppercase leading-none tracking-tight text-[#0C0C0C]"
             style={{ fontSize: "clamp(2.75rem, 11vw, 150px)" }}
           >
             {contact.heading}
@@ -48,7 +42,7 @@ export default function ContactSection() {
 
         <FadeIn delay={0.16} y={30}>
           <p
-            className="mt-6 max-w-[560px] font-light leading-relaxed text-[#0C0C0C] opacity-60"
+            className="mx-auto mt-6 max-w-[560px] text-center font-light leading-relaxed text-[#0C0C0C] opacity-60"
             style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.25rem)" }}
           >
             {contact.intro}
