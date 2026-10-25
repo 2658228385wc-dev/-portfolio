@@ -24,8 +24,8 @@ export default function ServicesSection() {
               style={{ borderColor: "rgba(12, 12, 12, 0.15)" }}
             >
               <span
-                className="font-black leading-none text-[#0C0C0C]"
-                style={{ fontSize: "clamp(3rem, 10vw, 140px)" }}
+                className="w-[1.28em] flex-none text-left font-black leading-none text-[#0C0C0C]"
+                style={{ fontSize: "clamp(3rem, 10vw, 140px)", fontVariantNumeric: "tabular-nums" }}
               >
                 {service.number}
               </span>
