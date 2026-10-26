@@ -23,6 +23,8 @@ export default function FolderCarousel() {
   const settleRef = useRef<number | undefined>(undefined);
   const activeRef = useRef(ITEMS.length);
   const wrappingRef = useRef(false);
+  /** 程序触发的平滑滚动进行中（此时禁止循环平移，否则目标失效会来回抖） */
+  const smoothRef = useRef(false);
   const dragRef = useRef({ active: false, x: 0, left: 0, moved: false });
   const [active, setActive] = useState(ITEMS.length);
 
@@ -33,23 +35,6 @@ export default function FolderCarousel() {
     if (!a || !b) return 0;
     return b.offsetLeft - a.offsetLeft;
   }, []);
-
-  /** 滚出中间组时静默平移一组，视觉上无缝 */
-  const wrapIfNeeded = useCallback(() => {
-    const track = trackRef.current;
-    if (!track || wrappingRef.current || dragRef.current.active) return;
-    const g = groupWidth();
-    if (g <= 0) return;
-    let delta = 0;
-    if (track.scrollLeft < g * 0.5) delta = g;
-    else if (track.scrollLeft > g * 1.5) delta = -g;
-    if (!delta) return;
-    wrappingRef.current = true;
-    track.scrollLeft += delta;
-    requestAnimationFrame(() => {
-      wrappingRef.current = false;
-    });
-  }, [groupWidth]);
 
   /* 测量每一项到轨道中心的距离，写入 --p */
   const paint = useCallback(() => {
@@ -80,24 +65,65 @@ export default function FolderCarousel() {
     }
   }, []);
 
+  /**
+   * 滚出中间组时静默平移一组，视觉上无缝。
+   * 跳位后必须立刻重算 --p：否则会有一帧所有文件夹都处于闭合状态，看起来像频闪。
+   */
+  const wrapIfNeeded = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    // 平滑滚动进行中 / 指针拖拽中不平移，否则动画目标失效会来回打转
+    if (wrappingRef.current || dragRef.current.active || smoothRef.current) return;
+    const g = groupWidth();
+    if (g <= 0) return;
+    let delta = 0;
+    if (track.scrollLeft < g * 0.5) delta = g;
+    else if (track.scrollLeft > g * 1.5) delta = -g;
+    if (!delta) return;
+    wrappingRef.current = true;
+    track.scrollLeft += delta;
+    paint();
+    requestAnimationFrame(() => {
+      wrappingRef.current = false;
+    });
+  }, [groupWidth, paint]);
+
   const schedule = useCallback(() => {
     cancelAnimationFrame(rafRef.current);
     rafRef.current = requestAnimationFrame(() => {
-      paint();
       wrapIfNeeded();
+      paint();
     });
   }, [paint, wrapIfNeeded]);
 
-  const focusTo = useCallback((i: number, smooth = true) => {
-    const track = trackRef.current;
-    const el = itemsRef.current[i];
-    if (!track || !el) return;
-    const tr = track.getBoundingClientRect();
-    const er = el.getBoundingClientRect();
-    const left =
-      track.scrollLeft + (er.left - tr.left) - (track.clientWidth - er.width) / 2;
-    track.scrollTo({ left, behavior: smooth ? "smooth" : "auto" });
-  }, []);
+  /**
+   * 聚焦到第 i 项。目标一律换算到「中间组」再滚，
+   * 这样平滑滚动的目标永远落在可视域内，不会穿越循环边界后被打断。
+   */
+  const focusTo = useCallback(
+    (i: number, smooth = true) => {
+      const track = trackRef.current;
+      if (!track) return;
+      const n = ITEMS.length;
+      const center = n + (((i % n) + n) % n);
+      const step = groupWidth() / n;
+      const shift = (center - i) * step;
+      if (shift) {
+        // 整组平移，视觉完全等价，同时取消正在进行的平滑滚动
+        track.scrollLeft += shift;
+        paint();
+      }
+      const el = itemsRef.current[center];
+      if (!el) return;
+      const tr = track.getBoundingClientRect();
+      const er = el.getBoundingClientRect();
+      const left =
+        track.scrollLeft + (er.left - tr.left) - (track.clientWidth - er.width) / 2;
+      if (smooth) smoothRef.current = true;
+      track.scrollTo({ left, behavior: smooth ? "smooth" : "auto" });
+    },
+    [groupWidth, paint]
+  );
 
   const nearestIndex = useCallback(() => {
     const track = trackRef.current;
@@ -143,6 +169,8 @@ export default function FolderCarousel() {
       if (e.ctrlKey || e.metaKey) return;
       if (Math.abs(e.deltaX) >= Math.abs(e.deltaY)) return;
       e.preventDefault();
+      // 用户接管滚动，取消「平滑滚动中」的锁，循环平移可以立刻生效
+      smoothRef.current = false;
       track.scrollLeft += e.deltaY;
     };
     track.addEventListener("wheel", onWheel, { passive: false });
@@ -156,6 +184,7 @@ export default function FolderCarousel() {
 
     const onDown = (e: PointerEvent) => {
       if (e.pointerType === "mouse" && e.button !== 0) return;
+      smoothRef.current = false;
       dragRef.current = {
         active: true,
         x: e.clientX,
@@ -202,23 +231,17 @@ export default function FolderCarousel() {
   const onScroll = () => {
     schedule();
     window.clearTimeout(settleRef.current);
+    // 滚动停稳后才认为平滑动画结束，之后再补一次位置校正
     settleRef.current = window.setTimeout(() => {
-      paint();
+      smoothRef.current = false;
       wrapIfNeeded();
-    }, 120);
+      paint();
+    }, 160);
   };
 
+  /** 方向键：focusTo 内部会换算到中间组，首尾自动接上 */
   const moveBy = (step: 1 | -1) => {
-    const cur = nearestIndex();
-    const next = cur + step;
-    if (next >= 0 && next < SLIDES.length) {
-      focusTo(next);
-      return;
-    }
-    // 越过首尾时落在中间组的对称位置，循环继续
-    const n = ITEMS.length;
-    const wrapped = ITEMS.length + ((cur - n + step + n) % n);
-    focusTo(wrapped);
+    focusTo(nearestIndex() + step);
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
