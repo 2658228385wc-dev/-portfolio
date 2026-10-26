@@ -17,7 +17,7 @@
   --fd-pad-x: 22px;
   --fd-pad-b: 20px;
   --fd-num: 34px;
-  --fd-name: 15px;
+  --fd-name: 18px;
   --fd-kick: 9px;
   --fd-inset: 14px;
   --fd-chip: 10px;
@@ -157,6 +157,8 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 10px;
+  /* 按钮默认 text-align:center，会把 kicker 在项目名宽度里居中 —— 显式左对齐 */
+  text-align: left;
   padding: 0 var(--fd-pad-x) var(--fd-pad-b);
   border-radius: calc(var(--fd-r) - var(--fd-r) * 0.17 * var(--p))
     calc(var(--fd-r) - var(--fd-r) * 0.17 * var(--p)) calc(var(--fd-r) * 0.73)
@@ -214,7 +216,7 @@
 
 .fd-name {
   display: block;
-  max-width: calc(var(--fd-w) * 0.62);
+  max-width: calc(var(--fd-w) * 0.66);
   font-size: var(--fd-name);
   font-weight: 900;
   line-height: 1.05;
@@ -255,7 +257,7 @@
     --fd-pad-x: 18px;
     --fd-pad-b: 16px;
     --fd-num: 27px;
-    --fd-name: 12px;
+    --fd-name: 15px;
     --fd-kick: 8px;
     --fd-inset: 11px;
     --fd-chip: 9px;
@@ -267,6 +269,7 @@
     --fd-w: 236px;
     --fd-h: 213px;
     --fd-gap: 40px;
+    --fd-name: 14px;
   }
 }
 
