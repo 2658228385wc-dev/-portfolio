@@ -1,0 +1,277 @@
+/**
+ * 文件夹式项目轨道
+ * --p（0→1）由 JS 按「该项中心与轨道中心的距离」实时写入，
+ * 所有打开动效都由这一个变量插值出来，拖拽过程中连续跟随。
+ */
+
+.fd-rail {
+  --fd-w: 340px;
+  --fd-h: 307px;
+  --fd-gap: clamp(44px, 6.2vw, 94px);
+  /* 内部比例参数：小屏整体覆盖一次即可，不必改结构 */
+  --fd-tab-h: 22px;
+  --fd-tab-w: 106px;
+  --fd-tab-x: 18px;
+  --fd-shift: 68px;
+  --fd-r: 30px;
+  --fd-pad-x: 22px;
+  --fd-pad-b: 20px;
+  --fd-num: 34px;
+  --fd-name: 15px;
+  --fd-kick: 9px;
+  --fd-inset: 14px;
+  --fd-chip: 10px;
+  position: relative;
+}
+
+.fd-track {
+  display: flex;
+  align-items: center;
+  gap: var(--fd-gap);
+  padding-block: clamp(64px, 8vw, 92px) clamp(44px, 6vw, 72px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  outline: none;
+  touch-action: pan-x pan-y;
+}
+
+.fd-track::-webkit-scrollbar {
+  display: none;
+}
+
+.fd-track.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+.fd-track:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.28);
+  outline-offset: -1px;
+}
+
+/* 循环渲染三组，首尾无需留白 */
+
+.fd-item {
+  --p: 0;
+  flex: 0 0 var(--fd-w);
+  height: var(--fd-h);
+  scroll-snap-align: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ---------- 文件夹本体 ---------- */
+
+.fd {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transform: scale(calc(1 + 0.26 * var(--p)), calc(1 + 0.2 * var(--p)));
+  transform-origin: 50% 72%;
+  will-change: transform;
+}
+
+.fd:focus-visible {
+  outline: none;
+}
+
+/* 背板：tab 凸起 + 主背板，同色叠成一体 */
+.fd-back {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--fd-tab-h);
+  bottom: 0;
+  border-radius: var(--fd-r);
+  background: #4b9de2;
+  box-shadow: 0 26px 44px -20px rgba(0, 0, 0, 0.85);
+}
+
+.fd-back::before {
+  content: "";
+  position: absolute;
+  left: var(--fd-tab-x);
+  top: calc(var(--fd-tab-h) * -1);
+  width: var(--fd-tab-w);
+  height: calc(var(--fd-tab-h) + 18px);
+  /* 右上大圆角形成向主体过渡的弧面，比硬斜切更接近设计稿 */
+  border-radius: calc(var(--fd-r) * 0.47) calc(var(--fd-tab-w) * 0.42) 0 0;
+  background: inherit;
+}
+
+/* 白色内页：折叠时藏在前面板后，展开时升起 */
+.fd-paper {
+  position: absolute;
+  left: var(--fd-inset);
+  right: var(--fd-inset);
+  top: calc(var(--fd-tab-h) + 1px);
+  height: calc(12px + var(--fd-shift) * var(--p));
+  display: flex;
+  align-items: center;
+  gap: calc(var(--fd-chip) * 0.7);
+  padding: 0 calc(var(--fd-pad-x) * var(--p));
+  border-radius: calc(var(--fd-r) * 0.36) calc(var(--fd-r) * 0.36) 4px 4px;
+  background: #fff;
+  box-shadow: 0 -2px 12px rgba(8, 34, 66, 0.22);
+  overflow: hidden;
+  opacity: calc(0.15 + 0.85 * var(--p));
+  white-space: nowrap;
+}
+
+.fd-chip {
+  flex: none;
+  font-size: var(--fd-chip);
+  font-weight: 500;
+  line-height: 1;
+  color: #2a6fac;
+  background: #e7f2fc;
+  border-radius: 999px;
+  padding: 3px 8px;
+}
+
+.fd-period {
+  font-size: var(--fd-chip);
+  font-weight: 500;
+  line-height: 1;
+  color: #46586b;
+}
+
+/* 前面板 */
+.fd-front {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--fd-tab-h) + var(--fd-shift) * var(--p));
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 var(--fd-pad-x) var(--fd-pad-b);
+  border-radius: calc(var(--fd-r) - var(--fd-r) * 0.17 * var(--p))
+    calc(var(--fd-r) - var(--fd-r) * 0.17 * var(--p)) calc(var(--fd-r) * 0.73)
+    calc(var(--fd-r) * 0.73);
+  background: linear-gradient(
+    180deg,
+    #93ccf9 0%,
+    #7dc1f9 30%,
+    #5fb2fb 56%,
+    #3aa0fd 78%,
+    #158eff 100%
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -10px 14px -8px rgba(0, 74, 158, 0.42),
+    0 16px 32px -14px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+/* 展开时整块提亮，模拟被照亮 */
+.fd-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    #b6e0fe 0%,
+    #8eccfe 32%,
+    rgba(106, 185, 255, 0) 72%
+  );
+  opacity: var(--p);
+}
+
+.fd-meta,
+.fd-num {
+  position: relative;
+  z-index: 1;
+}
+
+.fd-meta {
+  min-width: 0;
+}
+
+.fd-kicker {
+  display: block;
+  margin-bottom: calc(var(--fd-kick) * 0.42);
+  font-size: var(--fd-kick);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.fd-name {
+  display: block;
+  max-width: calc(var(--fd-w) * 0.62);
+  font-size: var(--fd-name);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fd-num {
+  flex: none;
+  font-size: var(--fd-num);
+  font-weight: 900;
+  line-height: 0.76;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.fd:hover .fd-front {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    inset 0 -10px 14px -8px rgba(0, 74, 158, 0.42),
+    0 24px 44px -14px rgba(0, 0, 0, 0.82);
+}
+
+/* ---------- 小屏 ---------- */
+
+@media (max-width: 900px) {
+  .fd-rail {
+    --fd-w: 268px;
+    --fd-h: 242px;
+    --fd-gap: 44px;
+    --fd-tab-h: 18px;
+    --fd-tab-w: 84px;
+    --fd-tab-x: 14px;
+    --fd-shift: 58px;
+    --fd-r: 24px;
+    --fd-pad-x: 18px;
+    --fd-pad-b: 16px;
+    --fd-num: 27px;
+    --fd-name: 12px;
+    --fd-kick: 8px;
+    --fd-inset: 11px;
+    --fd-chip: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fd-rail {
+    --fd-w: 236px;
+    --fd-h: 213px;
+    --fd-gap: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fd-front {
+    transition: none;
+  }
+}

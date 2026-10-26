@@ -104,10 +104,10 @@ export const projects = {
   heading: "Project",
   cta: "项目详情",
   items: [
-    { number: "01", category: "用户增长", name: "TEMU-Farmland" },
-    { number: "02", category: "用户增长", name: "拼多多-省钱月卡" },
-    { number: "03", category: "用户增长", name: "TEMU-Circle" },
-    { number: "04", category: "个人成长", name: "其他设计" },
+    { number: "01", category: "用户增长", name: "TEMU-Farmland", period: "2024.07 – 2025.09" },
+    { number: "02", category: "用户增长", name: "拼多多-省钱月卡", period: "2022.09 – 2023.04" },
+    { number: "03", category: "用户增长", name: "TEMU-Circle", period: "2023.04 – 2024.07" },
+    { number: "04", category: "个人成长", name: "其他设计", period: "2021 – 2026" },
   ],
 };
 
