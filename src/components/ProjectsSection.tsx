@@ -21,10 +21,6 @@ export default function ProjectsSection() {
         <div className="mt-6 sm:mt-8">
           <FolderCarousel />
         </div>
-
-        <p className="mt-2 px-5 text-center font-system text-[0.7rem] uppercase tracking-[0.2em] text-[#D7E2EA] opacity-35 sm:mt-4">
-          拖拽 / ← → 切换
-        </p>
       </FadeIn>
     </section>
   );
