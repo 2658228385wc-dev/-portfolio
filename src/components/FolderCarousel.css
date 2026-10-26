@@ -7,7 +7,7 @@
 .fd-rail {
   --fd-w: 340px;
   --fd-h: 307px;
-  --fd-gap: clamp(44px, 6.2vw, 94px);
+  --fd-gap: clamp(64px, 9vw, 136px);
   /* 内部比例参数：小屏整体覆盖一次即可，不必改结构 */
   --fd-tab-h: 22px;
   --fd-tab-w: 106px;
@@ -246,7 +246,7 @@
   .fd-rail {
     --fd-w: 268px;
     --fd-h: 242px;
-    --fd-gap: 44px;
+    --fd-gap: 56px;
     --fd-tab-h: 18px;
     --fd-tab-w: 84px;
     --fd-tab-x: 14px;
@@ -266,7 +266,7 @@
   .fd-rail {
     --fd-w: 236px;
     --fd-h: 213px;
-    --fd-gap: 32px;
+    --fd-gap: 40px;
   }
 }
 
