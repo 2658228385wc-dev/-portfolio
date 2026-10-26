@@ -161,17 +161,24 @@ export default function FolderCarousel() {
     };
   }, [focusTo, paint]);
 
-  /* 滚轮：指针在轨道内时转横向，滚到头之前一直有效；循环轨道没有尽头，所以始终接管 */
+  /**
+   * 滚轮只接管「横向意图」：
+   * - 触控板左右滑 / Shift + 滚轮 → 切换文件夹
+   * - 普通竖向滚轮 → 完全放行，让页面正常上下滚动
+   * 早期版本把竖向滚轮无条件转成横向，导致指针落在这一带时整页滚不动。
+   */
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
     const onWheel = (e: WheelEvent) => {
       if (e.ctrlKey || e.metaKey) return;
-      if (Math.abs(e.deltaX) >= Math.abs(e.deltaY)) return;
+      const horizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+      const shiftScroll = e.shiftKey && Math.abs(e.deltaY) > 0;
+      if (!horizontal && !shiftScroll) return; // 竖向：交给页面
       e.preventDefault();
       // 用户接管滚动，取消「平滑滚动中」的锁，循环平移可以立刻生效
       smoothRef.current = false;
-      track.scrollLeft += e.deltaY;
+      track.scrollLeft += shiftScroll && !horizontal ? e.deltaY : e.deltaX;
     };
     track.addEventListener("wheel", onWheel, { passive: false });
     return () => track.removeEventListener("wheel", onWheel);

@@ -40,6 +40,9 @@
   cursor: grab;
   outline: none;
   touch-action: pan-x pan-y;
+  /* 横向滚到头不要把滚动/返回手势传给页面，纵向照常冒泡，页面上下滚动不受影响 */
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
 }
 
 .fd-track::-webkit-scrollbar {
