@@ -78,7 +78,7 @@ export default function AboutSection() {
         <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
           <AnimatedText
             lines={about.lines}
-            className="max-w-[560px] text-center font-medium leading-relaxed text-[#858585]"
+            className="max-w-[560px] text-center font-system font-medium leading-relaxed text-[#858585]"
             emphasisClassName="font-semibold text-[#D7E2EA]"
             style={{ fontSize: "clamp(1rem, 2vw, 1.35rem)" }}
           />

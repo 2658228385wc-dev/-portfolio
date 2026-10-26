@@ -98,7 +98,7 @@ export default function ProjectDetailPage({ projectId, onBack }: Props) {
           >
             {meta.name}
           </h1>
-          <p className="mt-5 max-w-3xl text-sm leading-relaxed text-[#D7E2EA] opacity-80 sm:mt-7 sm:text-lg">
+          <p className="mt-5 max-w-3xl font-system text-sm leading-relaxed text-[#D7E2EA] opacity-80 sm:mt-7 sm:text-lg">
             {detail.tagline}
           </p>
         </FadeIn>
@@ -122,7 +122,7 @@ export default function ProjectDetailPage({ projectId, onBack }: Props) {
                 <div className="text-[11px] uppercase tracking-widest text-[#D7E2EA] opacity-50 sm:text-xs">
                   {m.label}
                 </div>
-                <div className="mt-2 text-sm font-medium text-white/90 sm:text-base">
+                <div className="mt-2 font-system text-sm font-medium text-white/90 sm:text-base">
                   {m.value}
                 </div>
               </div>
@@ -145,7 +145,7 @@ export default function ProjectDetailPage({ projectId, onBack }: Props) {
                   <li key={i}>
                     <button
                       onClick={() => scrollToPart(i)}
-                      className={`-ml-px block w-full border-l-2 py-1.5 pl-4 text-left text-sm transition-colors ${
+                      className={`-ml-px block w-full border-l-2 py-1.5 pl-4 text-left font-system text-sm transition-colors ${
                         activePart === i
                           ? "border-white text-white"
                           : "border-transparent text-[#D7E2EA]/50 hover:text-[#D7E2EA]"
@@ -165,7 +165,7 @@ export default function ProjectDetailPage({ projectId, onBack }: Props) {
                 </div>
                 <ul className="mt-3 space-y-2">
                   {detail.results.map((r, i) => (
-                    <li key={i} className="text-sm text-white/80">
+                    <li key={i} className="font-system text-sm text-white/80">
                       {r}
                     </li>
                   ))}
@@ -193,7 +193,7 @@ export default function ProjectDetailPage({ projectId, onBack }: Props) {
                     {p.title}
                   </h2>
                   {p.intro && (
-                    <p className="mt-5 max-w-2xl text-sm leading-loose text-[#D7E2EA] opacity-90 sm:text-base">
+                    <p className="mt-5 max-w-2xl font-system text-sm leading-loose text-[#D7E2EA] opacity-90 sm:text-base">
                       {p.intro}
                     </p>
                   )}
@@ -203,7 +203,7 @@ export default function ProjectDetailPage({ projectId, onBack }: Props) {
                     if (!imgs.length) return null;
                     return (
                       <div key={si} className="mt-10">
-                        <h3 className="border-l-2 border-white/30 pl-3 text-sm font-semibold text-white/90 sm:text-base">
+                        <h3 className="border-l-2 border-white/30 pl-3 font-system text-sm font-semibold text-white/90 sm:text-base">
                           {s.title}
                         </h3>
                         <div className="mt-4 space-y-4 sm:space-y-5">

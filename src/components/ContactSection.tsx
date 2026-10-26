@@ -27,7 +27,7 @@ export default function ContactSection() {
 
         <FadeIn delay={0.16} y={30}>
           <p
-            className="mx-auto mt-6 max-w-[560px] text-center font-light leading-relaxed text-[#0C0C0C] opacity-60"
+            className="mx-auto mt-6 max-w-[560px] text-center font-system font-light leading-relaxed text-[#0C0C0C] opacity-60"
             style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.25rem)" }}
           >
             {contact.intro}
@@ -53,7 +53,7 @@ export default function ContactSection() {
                       </span>
                     </span>
                     <span
-                      className="font-medium tracking-tight text-[#0C0C0C]"
+                      className="font-system font-medium tracking-tight text-[#0C0C0C]"
                       style={{ fontSize: "clamp(1.05rem, 2.2vw, 1.75rem)" }}
                     >
                       {row.value}
@@ -92,7 +92,7 @@ export default function ContactSection() {
         </div>
 
         {/* 页脚 */}
-        <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t pt-6 text-[0.7rem] uppercase tracking-[0.2em] text-[#0C0C0C] opacity-50 sm:mt-24" style={{ borderColor: "rgba(12,12,12,0.15)" }}>
+        <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t pt-6 font-system text-[0.7rem] uppercase tracking-[0.2em] text-[#0C0C0C] opacity-50 sm:mt-24" style={{ borderColor: "rgba(12,12,12,0.15)" }}>
           <span>{contact.footer}</span>
           <a
             href="#top"

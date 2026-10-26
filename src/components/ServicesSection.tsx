@@ -31,13 +31,13 @@ export default function ServicesSection() {
               </span>
               <div className="flex flex-col gap-2 sm:gap-3">
                 <h3
-                  className="font-medium uppercase text-[#0C0C0C]"
+                  className="font-system font-medium uppercase text-[#0C0C0C]"
                   style={{ fontSize: "clamp(1rem, 2.2vw, 2.1rem)" }}
                 >
                   {service.name}
                 </h3>
                 <p
-                  className="max-w-2xl font-light leading-relaxed text-[#0C0C0C] opacity-60"
+                  className="max-w-2xl font-system font-light leading-relaxed text-[#0C0C0C] opacity-60"
                   style={{ fontSize: "clamp(0.85rem, 1.6vw, 1.25rem)" }}
                 >
                   {service.description}
