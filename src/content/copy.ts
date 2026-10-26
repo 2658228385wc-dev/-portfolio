@@ -24,14 +24,14 @@ export const common = {
 
 export const contact = {
   heading: "Let's talk",
-  intro: "有合适的机会、合作意向，或只是想聊聊设计与 AI，欢迎随时找我。",
+  intro: "有合适的机会、合作意向，或只是想聊聊设计与AI，欢迎随时找我。",
   phone: "15928188814",
   phoneDisplay: "159 2818 8814",
   email: "2658228385@qq.com",
   wechatNote: "扫码添加微信",
   qrAlt: "王诚的微信好友二维码",
   qrHint: "微信扫码",
-  footer: "© 2026 王诚 · 体验设计师",
+  footer: "© 2026王诚 · 体验设计师",
 };
 
 export const hero = {
@@ -64,7 +64,7 @@ export const about = {
     { text: "我相信好的设计不是加法——是" },
     { text: "在正确的位置说最少的话。", emphasis: true },
     { text: "近期正在探索" },
-    { text: "AI辅助设计与 Vibe Coding，", emphasis: true },
+    { text: "AI辅助设计与Vibe Coding，", emphasis: true },
     { text: "持续拓展设计的边界。" },
   ] as TextLine[],
 };
@@ -145,36 +145,36 @@ export const projectDetails: ProjectDetail[] = [
   {
     number: "01",
     tagline:
-      "540+ 天持续迭代，以体验设计主导的农场经营玩法。从概念定义、2.5D 视觉体系、组件规范，到上线反馈与自研新玩法，构建「种植—收获—兑换」的长期留存闭环。",
+      "540+天持续迭代，以体验设计主导的农场经营玩法。从概念定义、2.5D视觉体系、组件规范，到上线反馈与自研新玩法，构建「种植—收获—兑换」的长期留存闭环。",
     meta: [
       { label: "客户 / Client", value: "拼多多 · TEMU" },
       { label: "时间 / Year", value: "2024.07 – 2025.09" },
       { label: "角色 / Role", value: "体验设计师（主设计）" },
       { label: "平台 / Platform", value: "TEMU · 移动端" },
     ],
-    results: ["下单用户占比 +18.6%", "场景 GMV +16.7%", "留存率 +8.1%", "540+ 天持续迭代"],
+    results: ["下单用户占比+18.6%", "场景GMV+16.7%", "留存率+8.1%", "540+天持续迭代"],
     showGallery: false,
     parts: [
       {
         title: "项目概览",
         intro:
-          "Farmland 是 TEMU 的游戏化留存项目：把「农场经营」植入电商 App，让用户在购物之外拥有一块可经营的土地。7 天设计冲刺定下方向后，项目进入 540+ 天的长线迭代。前期我用体验五要素与 Why-What-How 框架建立策略判断，再快速产出交互低保真对齐团队。",
+          "Farmland是TEMU的游戏化留存项目：把「农场经营」植入电商App，让用户在购物之外拥有一块可经营的土地。7天设计冲刺定下方向后，项目进入540+天的长线迭代。前期我用体验五要素与Why-What-How框架建立策略判断，再快速产出交互低保真对齐团队。",
         sections: [
           { title: "项目背景与业务目标", images: [1] },
-          { title: "项目规划 · 7 天冲刺", images: [2] },
+          { title: "项目规划 · 7天冲刺", images: [2] },
           { title: "产品设计策略", images: [3] },
         ],
       },
       {
         title: "概念与视觉探索",
         intro:
-          "视觉方向不是一次成型的：从第一轮风格探索到多轮演变，每一步都回到三个修订目标——BEAUTY（美）、TRUTH（真）、HAPPY（乐）。最终收敛出 CORE DESIGN CONCEPT，作为整个项目 540+ 天迭代的设计北极星。",
+          "视觉方向不是一次成型的：从第一轮风格探索到多轮演变，每一步都回到三个修订目标——BEAUTY（美）、TRUTH（真）、HAPPY（乐）。最终收敛出CORE DESIGN CONCEPT，作为整个项目540+天迭代的设计北极星。",
         sections: [{ title: "设计理念", images: [4] }],
       },
       {
         title: "视觉语言与规范",
         intro:
-          "概念落地为可执行的视觉体系：从「形、色、字、构、质」五个维度定义设计语言，建立空间结构与元素组件，最终落到颜色与文字的应用规范，让 1000+ 页面的长线迭代保持一致的体验与品牌感。",
+          "概念落地为可执行的视觉体系：从「形、色、字、构、质」五个维度定义设计语言，建立空间结构与元素组件，最终落到颜色与文字的应用规范，让1000+页面的长线迭代保持一致的体验与品牌感。",
         sections: [
           { title: "设计语言规范", images: [5] },
           { title: "视觉风格", images: [6] },
@@ -198,7 +198,7 @@ export const projectDetails: ProjectDetail[] = [
       {
         title: "多路径触达，强化利益感知",
         intro:
-          "如何让用户感知到活动？用触达多样、利益点透传清晰的方式回答：首页入口、活动中心、首页扑脸弹窗三个层面同时发力，入口点击率分别提升 12.8% 与 8.3%。",
+          "如何让用户感知到活动？用触达多样、利益点透传清晰的方式回答：首页入口、活动中心、首页扑脸弹窗三个层面同时发力，入口点击率分别提升12.8%与8.3%。",
         sections: [
           { title: "方案总览", images: [15] },
           { title: "首页入口", images: [16] },
@@ -209,7 +209,7 @@ export const projectDetails: ProjectDetail[] = [
       {
         title: "简化开团流程，优化开团包装",
         intro:
-          "开团流程较长，划分为开团包装换皮、选品落地页布局调整、打包/补仓流程简化三个部分分别进行 AB 测试：点击率分别提升 16.12%、11.2%、10.64%，开团率与次留同步正向。",
+          "开团流程较长，划分为开团包装换皮、选品落地页布局调整、打包/补仓流程简化三个部分分别进行AB测试：点击率分别提升16.12%、11.2%、10.64%，开团率与次留同步正向。",
         sections: [
           { title: "方案总览", images: [19] },
           { title: "开团包装换皮", images: [20] },
@@ -224,7 +224,7 @@ export const projectDetails: ProjectDetail[] = [
         sections: [
           { title: "方案总览", images: [23] },
           { title: "浇水竞赛", images: [24, 25] },
-          { title: "首页入口 Icon", images: [26] },
+          { title: "首页入口Icon", images: [26] },
           { title: "二级小玩法", images: [27] },
         ],
       },
@@ -254,7 +254,7 @@ export const projectDetails: ProjectDetail[] = [
       {
         title: "项目总结",
         intro:
-          "540+ 天、1000+ 页面、60+ 动效、200+ 需求——Farmland 让我完整经历了「从 0 到 1 定义体系，从 1 到 100 维持体系」的全过程；数据侧下单用户占比、场景 GMV、留存率分别录得 18.6% / 16.7% / 8.1% 的正向反馈。",
+          "540+天、1000+页面、60+动效、200+需求——Farmland让我完整经历了「从0到1定义体系，从1到100维持体系」的全过程；数据侧下单用户占比、场景GMV、留存率分别录得18.6% / 16.7% / 8.1%的正向反馈。",
         sections: [
           { title: "贡献与收获", images: [37] },
           { title: "业务支持", images: [38] },
@@ -271,15 +271,15 @@ export const projectDetails: ProjectDetail[] = [
       { label: "客户 / Client", value: "拼多多 · TEMU" },
       { label: "时间 / Year", value: "2022.09 – 2023.04" },
       { label: "角色 / Role", value: "体验设计师（主设计）" },
-      { label: "协作 / Team", value: "3 产品 + 3 开发" },
+      { label: "协作 / Team", value: "3产品+3开发" },
     ],
-    results: ["会员体量 +200%", "2 亿+ 增量 GMV", "5000 万+ 会员体量", "ROI 1 : 18"],
+    results: ["会员体量+200%", "2亿+增量GMV", "5000万+会员体量", "ROI 1 : 18"],
     showGallery: false,
     parts: [
       {
         title: "前期工作",
         intro:
-          "2022.09 入项时，省钱月卡已经从「体量」目标切换为「ROI + 增量 GMV」。前期我用 3 个问题快速建立产品判断：入口是否明显、能否新增入口、视觉主色为何。结论是——保持「红包红」主色不动，UI 与动效需要同步升级，入口需要在不干扰用户的前提下重新植入。",
+          "2022.09入项时，省钱月卡已经从「体量」目标切换为「ROI+增量GMV」。前期我用3个问题快速建立产品判断：入口是否明显、能否新增入口、视觉主色为何。结论是——保持「红包红」主色不动，UI与动效需要同步升级，入口需要在不干扰用户的前提下重新植入。",
         sections: [
           { title: "项目背景与设计价值", images: [3, 4] },
         ],
@@ -287,7 +287,7 @@ export const projectDetails: ProjectDetail[] = [
       {
         title: "业务支持",
         intro:
-          "围绕「会员体量」与「增量 GMV」两条核心线，承接开通包装、续费包装两个高频业务场景。在 ROI 不退化的前提下持续拉新与促活——开通红包方案让会员体量提升 200%，从 3000 万做到 5000 万+。",
+          "围绕「会员体量」与「增量GMV」两条核心线，承接开通包装、续费包装两个高频业务场景。在ROI不退化的前提下持续拉新与促活——开通红包方案让会员体量提升200%，从3000万做到5000万+。",
         sections: [
           { title: "参与模块全景", images: [5] },
           { title: "会员体量 · 3000万到5000万+", images: [6] },
@@ -298,7 +298,7 @@ export const projectDetails: ProjectDetail[] = [
       {
         title: "自驱设计",
         intro:
-          "主动发现产品问题并给出可落地方案。从留存玩法（花钱抽券）到订单页 banner A/B，再到月卡开通页 UI 大改版与秒杀包装——把设计师的判断与验证，沉淀为可量化的增长杠杆。",
+          "主动发现产品问题并给出可落地方案。从留存玩法（花钱抽券）到订单页banner A/B，再到月卡开通页UI大改版与秒杀包装——把设计师的判断与验证，沉淀为可量化的增长杠杆。",
         sections: [
           { title: "自驱设计的定义", images: [14] },
           { title: "留存玩法 · 花钱抽券", images: [9, 10, 11] },
@@ -400,46 +400,46 @@ export const projectDetails: ProjectDetail[] = [
   {
     number: "04",
     tagline:
-      "百度网盘的视觉探索合集：SVIP 体验焕新、IP 运营活动与 3D 表达练习。",
+      "百度网盘的视觉探索合集：SVIP体验焕新、IP运营活动与3D表达练习。",
     meta: [
       { label: "客户 / Client", value: "百度网盘" },
       { label: "时间 / Year", value: "2021 – 2026" },
       { label: "角色 / Role", value: "体验设计师" },
       { label: "平台 / Platform", value: "移动端 · 3D" },
     ],
-    results: ["SVIP tab 首页焕新", "MBTI 营销活动落地", "1 套可复用 3D 角色资产"],
+    results: ["SVIP tab首页焕新", "MBTI营销活动落地", "1套可复用3D角色资产"],
     showGallery: false,
     parts: [
       {
         title: "项目概览",
         intro:
-          "这一组作品来自百度网盘与个人视觉实践：包括收银台 SVIP tab 的首页焕新设计、网盘文库 MBTI 营销活动，以及 Blender 角色建模练习。它们更偏视觉语言与表现力的探索——如何在商业约束内做出辨识度。",
+          "这一组作品来自百度网盘与个人视觉实践：包括收银台SVIP tab的首页焕新设计、网盘文库MBTI营销活动，以及Blender角色建模练习。它们更偏视觉语言与表现力的探索——如何在商业约束内做出辨识度。",
         sections: [{ title: "百度网盘 · 项目封面", images: [1] }],
       },
       {
-        title: "SVIP 体验焕新",
+        title: "SVIP体验焕新",
         intro:
-          "在既有框架内重排视觉层级，强化会员尊贵感与续费引导；MBTI 营销活动则用人格化话题包装功能点，让功能介绍变成一次可分享的自我表达。",
+          "在既有框架内重排视觉层级，强化会员尊贵感与续费引导；MBTI营销活动则用人格化话题包装功能点，让功能介绍变成一次可分享的自我表达。",
         sections: [
-          { title: "SVIP tab 焕新 · 背景与设计策略", images: [2] },
-          { title: "SVIP tab 焕新 · 两版方案", images: [3] },
-          { title: "MBTI 营销活动 · 背景与用户洞察", images: [4] },
-          { title: "MBTI 营销活动 · 设计目标与关键词", images: [5] },
-          { title: "MBTI 营销活动 · 设计思路 · 形色质构", images: [6] },
-          { title: "MBTI 营销活动 · AI 辅助生成素材", images: [7] },
+          { title: "SVIP tab焕新 · 背景与设计策略", images: [2] },
+          { title: "SVIP tab焕新 · 两版方案", images: [3] },
+          { title: "MBTI营销活动 · 背景与用户洞察", images: [4] },
+          { title: "MBTI营销活动 · 设计目标与关键词", images: [5] },
+          { title: "MBTI营销活动 · 设计思路 · 形色质构", images: [6] },
+          { title: "MBTI营销活动 · AI辅助生成素材", images: [7] },
           { title: "页面展示 · Before / After", images: [8] },
         ],
       },
       {
-        title: "IP 与 3D 延展",
+        title: "IP与3D延展",
         intro:
-          "以云一朵 IP 为核心的数字盲盒玩法强化用户特权差异感知；Blender 角色建模与场景渲染练习，则持续反哺产品视觉的三维表达能力。",
-        sections: [{ title: "Blender 角色建模与渲染练习", images: [39] }],
+          "以云一朵IP为核心的数字盲盒玩法强化用户特权差异感知；Blender角色建模与场景渲染练习，则持续反哺产品视觉的三维表达能力。",
+        sections: [{ title: "Blender角色建模与渲染练习", images: [39] }],
       },
       {
-        title: "实习复盘 · NA12.0 与产品矩阵",
+        title: "实习复盘 · NA12.0与产品矩阵",
         intro:
-          "实习期间参与的百度网盘 NA12.0 版本迭代，以及同期负责的 Teracleaner 清理工具与 Teratransfer 交互动效 demo。这段经历让我完整走了一遍大版本迭代的链路：从数据与业务目标拆解设计方向，到视觉语言、图标体系与组件规范的系统落地。",
+          "实习期间参与的百度网盘NA12.0版本迭代，以及同期负责的Teracleaner清理工具与Teratransfer交互动效demo。这段经历让我完整走了一遍大版本迭代的链路：从数据与业务目标拆解设计方向，到视觉语言、图标体系与组件规范的系统落地。",
         sections: [
           { title: "实习复盘 · 封面与目录", images: [9, 11] },
           { title: "NA12.0 · 版本迭代与设计方向", images: [12, 13] },
@@ -450,9 +450,9 @@ export const projectDetails: ProjectDetail[] = [
           { title: "卡片容器与信息分层", images: [17, 19, 21] },
           { title: "列表视图与传输流程", images: [22] },
           { title: "图标焕新 · 图标体系总览", images: [20] },
-          { title: "图标焕新 · 工具图标设计 40+", images: [26] },
+          { title: "图标焕新 · 工具图标设计40+", images: [26] },
           { title: "图标焕新 · 五类工具图标", images: [23] },
-          { title: "图标焕新 · 文件图标设计 50+", images: [27] },
+          { title: "图标焕新 · 文件图标设计50+", images: [27] },
           { title: "图标焕新 · 文件夹新样式", images: [25] },
           { title: "图标焕新 · 深浅色模式适配", images: [24] },
           { title: "自动备份", images: [28] },
@@ -460,7 +460,7 @@ export const projectDetails: ProjectDetail[] = [
           { title: "界面展示", images: [30] },
           { title: "全量上线数据反馈", images: [40] },
           { title: "Teracleaner · 项目背景与设计策略", images: [32, 33] },
-          { title: "Teracleaner · 设计规范与 LOGO", images: [34, 35] },
+          { title: "Teracleaner · 设计规范与LOGO", images: [34, 35] },
           { title: "Teracleaner · 主要页面", images: [36] },
           { title: "Teratransfer · 需求与挑战", images: [37] },
           { title: "Teratransfer · 交互动效策略", images: [38] },
