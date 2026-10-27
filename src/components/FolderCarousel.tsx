@@ -317,6 +317,32 @@ export default function FolderCarousel() {
           );
         })}
       </div>
+
+      {/* 左右切换：滚轮留给页面滚动，这里给鼠标用户一个明确入口 */}
+      <div className="fd-nav">
+        <button
+          type="button"
+          className="fd-arrow"
+          aria-label="上一个项目"
+          onMouseDown={(e) => e.preventDefault()}
+          onClick={() => moveBy(-1)}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M15 5l-7 7 7 7" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          className="fd-arrow"
+          aria-label="下一个项目"
+          onMouseDown={(e) => e.preventDefault()}
+          onClick={() => moveBy(1)}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }

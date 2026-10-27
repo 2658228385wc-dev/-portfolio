@@ -59,6 +59,73 @@
   outline-offset: -1px;
 }
 
+/* ---------- 左右切换按钮 ---------- */
+
+/* 滚轮交给页面滚动，切换靠这对按钮 / 拖拽 / 方向键 */
+/* 放在底部两端：文件夹打开时向下溢出约 86px，只有轨道下方的暗区是干净的 */
+.fd-nav {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-inline: clamp(14px, 2vw, 34px);
+  padding-block-end: clamp(6px, 1vw, 16px);
+  pointer-events: none;
+}
+
+.fd-arrow {
+  display: grid;
+  place-items: center;
+  width: calc(var(--fd-w) * 52 / 340);
+  height: calc(var(--fd-w) * 52 / 340);
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  background: rgba(10, 12, 16, 0.55);
+  color: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  pointer-events: auto;
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, transform 0.12s ease;
+}
+
+.fd-arrow svg {
+  width: 42%;
+  height: 42%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fd-arrow:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(20, 24, 30, 0.78);
+  color: #fff;
+}
+
+.fd-arrow:active {
+  transform: scale(0.94);
+}
+
+.fd-arrow:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* 触屏直接横滑，不需要按钮 */
+@media (hover: none) {
+  .fd-nav {
+    display: none;
+  }
+}
+
 /* 循环渲染三组，首尾无需留白 */
 
 .fd-item {
